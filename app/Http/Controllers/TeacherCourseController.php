@@ -2,27 +2,120 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
+use App\Teacher;
+use App\Course;
+
 
 class TeacherCourseController extends Controller
 {
-    public function index()
+    public function index($teacher_id)
     {
-    	return __METHOD__;
+       $teacher = Teacher::find($teacher_id);
+
+        if($teacher)
+        {
+            $courses = $teacher->courses;
+
+            return $this->createSuccessResponse($courses, 200);
+        }
+
+        return $this->createErrorResponse('The teacher with the given id does not exist', 404);
     }
 
-    public function store()
+    public function store(Request $request, $teacher_id)
     {
-    	return __METHOD__;
+        $teacher = Teacher::find($teacher_id);
+
+        if($teacher)
+        {
+            $this->validateRequest($request);
+
+            $course = Course::create
+            (
+                [
+                    'title' => $request->get('title'),
+                    'description' => $request->get('description'),
+                    'value' => $request->get('value'),
+                    'teacher_id' => $teacher->id
+                ]
+            );
+
+            return $this->createSuccessResponse("The course with id {$course->id} has been created and associated with the teacher wit id {$teacher->id}", 201);
+        }
+    	
+        return $this->createErrorResponse('The teacher with the given id does not exist', 404);
     }
 
-    public function update()
+    public function update(Request $request, $teacher_id, $course_id)
     {
-    	return __METHOD__;
+        $teacher = Teacher::find($teacher_id);
+
+        if($teacher)
+        {
+            $course = Course::find($course_id);
+
+            if($course)
+            {
+                $this->validateRequest($request);
+                $course->title = $request->get('title');
+                $course->description = $request->get('description');
+                $course->value = $request->get('value');
+                $course->teacher_id = $teacher_id;
+
+                $course->save();
+
+                return $this->createSuccessResponse("The course with id {$course_id} has been updated", 200);
+
+            }
+
+            return $this->createErrorResponse("The course with the id {$course_id} does not exist", 404);
+        }
+
+        return $this->createErrorResponse('The teacher with the given id does not exist', 404);
+
     }
 
-    public function destroy()
+    public function destroy($teacher_id, $course_id)
     {
-    	return __METHOD__;
+    	$teacher = Teacher::find($teacher_id);
+
+        if($teacher)
+        {
+            $course = Course::find($course_id);
+
+            if($course)
+            {
+                if($teacher->courses()->find($course->id))
+                {
+                    $course->students()->detach();
+                    $course->delete();
+                    return $this->createSuccessResponse("The course with id {$course_id} has been deleted", 200);
+                }
+
+                return $this->createErrorResponse("The course with the id {$course_id} is not associated with the teacher with id {$teacher_id}", 409);
+
+            }
+
+            return $this->createErrorResponse("The course with the id {$course_id} does not exist", 404);
+        }
+
+        return $this->createErrorResponse('The teacher with the given id does not exist', 404);
+    }
+
+
+
+    function validateRequest(Request $request)
+    {
+        $rules = 
+        [
+            'title' => 'required',
+            'description' => 'required',
+            'value' => 'required|numeric'
+        ];
+
+        $this->validate($request, $rules);
     }
 
 }

@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"teac",
+				"$teacher_id〔variable〕"
+			],
+			[
+				"cours",
+				"$course〔variable〕"
+			],
+			[
+				"teacher",
+				"teacher_id"
+			],
+			[
+				"cour",
+				"$course〔variable〕"
+			],
+			[
+				"tea",
+				"$teacher_id〔variable〕"
+			],
+			[
+				"stude",
+				"$student_id〔variable〕"
+			],
+			[
+				"cou",
+				"course"
+			],
+			[
+				"course",
+				"course_id"
+			],
+			[
+				"co",
+				"Course〔class〕"
+			],
+			[
+				"te",
+				"$teacher〔variable〕"
+			],
+			[
+				"stu",
+				"$student〔variable〕"
+			],
+			[
+				"create",
+				"createSuccessResponse"
+			],
+			[
+				"creat",
+				"createErrorResponse〔function〕"
+			],
+			[
+				"fun",
+				"function〔keyword〕"
+			],
+			[
 				"belo",
 				"belongsToMany〔function〕"
 			],
@@ -24,20 +80,12 @@
 				"obtainAllTeachers"
 			],
 			[
-				"teac",
-				"teachers"
-			],
-			[
 				"teach",
 				"teacherId"
 			],
 			[
 				"thi",
 				"$this〔variable〕"
-			],
-			[
-				"cours",
-				"$courseId〔variable〕"
 			],
 			[
 				"req",
@@ -48,16 +96,8 @@
 				"delete"
 			],
 			[
-				"te",
-				"teacher"
-			],
-			[
 				"in",
 				"input\tTag"
-			],
-			[
-				"stu",
-				"students"
 			],
 			[
 				"ph",
@@ -112,10 +152,6 @@
 				"access_token"
 			],
 			[
-				"fun",
-				"function"
-			],
-			[
 				"student",
 				"studentId"
 			],
@@ -156,56 +192,38 @@
 	"buffers":
 	[
 		{
-			"file": ".env",
+			"file": "app/Http/Controllers/CourseStudentController.php",
 			"settings":
 			{
-				"buffer_size": 282,
+				"buffer_size": 2273,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "bootstrap/app.php",
+			"file": "app/Http/Controllers/TeacherController.php",
 			"settings":
 			{
-				"buffer_size": 2986,
+				"buffer_size": 2460,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/TeacherCourseController.php",
+			"settings":
+			{
+				"buffer_size": 3381,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "database/factories/ModelFactory.php",
+			"file": "routes/web.php",
 			"settings":
 			{
-				"buffer_size": 556,
+				"buffer_size": 1895,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Teacher.php",
-			"settings":
-			{
-				"buffer_size": 292,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Course.php",
-			"settings":
-			{
-				"buffer_size": 365,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Student.php",
-			"settings":
-			{
-				"buffer_size": 294,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -252,14 +270,34 @@
 	[
 		"/C/xampp/htdocs/httpserver",
 		"/C/xampp/htdocs/httpserver/app",
-		"/C/xampp/htdocs/httpserver/bootstrap",
-		"/C/xampp/htdocs/httpserver/database/factories",
-		"/C/xampp/htdocs/httpserver/database/migrations",
-		"/C/xampp/htdocs/httpserver/database/seeds",
-		"/C/xampp/htdocs/httpserver/resources/views"
+		"/C/xampp/htdocs/httpserver/app/Http",
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers",
+		"/C/xampp/htdocs/httpserver/routes"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers/Controller.php",
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers/TeacherController.php",
+		"/C/xampp/htdocs/httpserver/vendor/illuminate/validation/ValidationException.php",
+		"/C/xampp/htdocs/httpserver/vendor/illuminate/validation/ValidationServiceProvider.php",
+		"/C/xampp/htdocs/httpserver/vendor/laravel/lumen-framework/src/Routing/ProvidesConvenienceMethods.php",
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers/StudentController.php",
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers/CourseController.php",
+		"/C/xampp/htdocs/httpserver/vendor/laravel/lumen-framework/src/Routing/Controller.php",
+		"/C/xampp/htdocs/httpserver/routes/web.php",
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers/CourseStudentController.php",
+		"/C/xampp/htdocs/httpserver/app/Http/Controllers/TeacherCourseController.php",
+		"/C/xampp/htdocs/httpserver/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/httpserver/database/factories/ModelFactory.php",
+		"/C/xampp/htdocs/httpserver/app/Course.php",
+		"/C/xampp/htdocs/httpserver/app/Student.php",
+		"/C/xampp/htdocs/httpserver/app/Teacher.php",
+		"/C/xampp/htdocs/httpserver/database/migrations/2017_01_17_091543_create_course_student_table.php",
+		"/C/xampp/htdocs/httpserver/database/migrations/2017_01_17_091401_create_courses_table.php",
+		"/C/xampp/htdocs/httpserver/database/migrations/2017_01_17_091343_create_students_table.php",
+		"/C/xampp/htdocs/httpserver/database/migrations/2017_01_17_091250_create_teachers_table.php",
+		"/C/xampp/htdocs/httpserver/bootstrap/app.php",
+		"/C/xampp/htdocs/httpserver/.env",
 		"/C/xampp/htdocs/HttpClient/.env",
 		"/C/xampp/htdocs/HttpClient/config/api.php",
 		"/C/xampp/htdocs/HttpClient/app/Http/Controllers/ClientController.php",
@@ -326,9 +364,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 96.0,
 		"where_history":
 		[
+			"<project>"
 		]
 	},
 	"find_state":
@@ -336,6 +375,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"student",
+			"student_id",
+			"name",
+			"buildFailedValidationResponse",
+			"new JsonResponse($error, 422)",
+			"student",
+			"students",
+			"course",
+			"courses",
+			"Course",
+			"TeacherController",
+			"TeacherCourseController",
+			"teachers",
+			"/{teachers}",
+			"teachers",
+			"homestead",
 			"https://lumenapi.juandmegon.com/",
 			"e",
 			"teacher",
@@ -380,73 +435,47 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".env",
+					"file": "app/Http/Controllers/CourseStudentController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 282,
+						"buffer_size": 2273,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								282,
-								282
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "bootstrap/app.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2986,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1085,
-								1085
+								1642,
+								1642
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 799.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "database/factories/ModelFactory.php",
+					"buffer": 1,
+					"file": "app/Http/Controllers/TeacherController.php",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 556,
+						"buffer_size": 2460,
 						"regions":
 						{
 						},
@@ -459,7 +488,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -469,56 +500,56 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/Teacher.php",
+					"buffer": 2,
+					"file": "app/Http/Controllers/TeacherCourseController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 292,
+						"buffer_size": 3381,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								292,
-								292
+								2877,
+								2877
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"open_with_edit": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1419.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/Course.php",
+					"buffer": 3,
+					"file": "routes/web.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 365,
+						"buffer_size": 1895,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								312,
-								312
+								1580,
+								1580
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -526,36 +557,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Student.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 294,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								289,
-								289
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"open_with_edit": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -609,6 +610,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"illuminate/validation",
+				"vendor\\illuminate\\validation\\ValidationServiceProvider.php"
+			],
+			[
+				"illuminate/validation/validationexception",
+				"vendor\\illuminate\\validation\\ValidationException.php"
+			],
+			[
+				"laravel/lumen/routing/controller",
+				"vendor\\laravel\\lumen-framework\\src\\Routing\\Controller.php"
+			],
 			[
 				"illuminate/foundation/exceptions/handler",
 				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php"

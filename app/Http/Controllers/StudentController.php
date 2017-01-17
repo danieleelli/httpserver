@@ -2,32 +2,94 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
+use App\Student;
+
 
 class StudentController extends Controller
 {
     public function index()
     {
-    	return __METHOD__;
+        $students = Student::all();
+
+        return $this->createSuccessResponse($students, 200);
     }
 
-    public function store()
+
+    public function show($id)
     {
-    	return __METHOD__;
+        $student = Student::find($id);
+        if($student)
+        {
+            return $this->createSuccessResponse($student, 200);
+        }
+
+        return $this->createErrorResponse("The student with id {$id} does not exist.", 404);
     }
 
-    public function show()
+
+    public function store(Request $request)
     {
-    	return __METHOD__;
+        $this->validateRequest($request);
+
+        $student = Student::create($request->all());
+
+        return $this->createSuccessResponse("The student with id {$student->id} has been created", 201);
+
     }
 
-    public function update()
+
+    public function update(Request $request, $student_id)
     {
-    	return __METHOD__;
+    	$student = Student::find($student_id);
+
+        if($student)
+        {
+            $this->validateRequest($request);
+
+            $student->name = $request->get('name');
+            $student->address = $request->get('address');
+            $student->phone = $request->get('phone');
+            $student->career = $request->get('career');
+
+            $student->save();
+
+            return $this->createSuccessResponse("The student with id {$student->id} has been updated.", 200);
+        }
+
+        return $this->createErrorResponse("The student with id {$student_id} does not exist.", 404);
     }
 
-    public function destroy()
+
+    public function destroy($student_id)
     {
-    	return __METHOD__;
+    	$student = Student::find($student_id);
+
+        if($student)
+        {
+            $student->courses()->detach();
+            $student->delete();
+            return $this->createSuccessResponse("The student with id {$student->id} has been deleted.", 200);
+        }
+
+        return $this->createErrorResponse("The student with id {$student_id} does not exist.", 404);
+    }
+
+
+
+
+    function validateRequest(Request $request)
+    {
+        $rules = 
+        [
+            'name' => 'required',
+            'phone' => 'required|numeric',
+            'address' => 'required',
+            'career' => 'required|in:engineering,math,physics'
+        ];
+
+        $this->validate($request, $rules);
     }
 
 }
